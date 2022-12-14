@@ -37,7 +37,7 @@ function App() {
 
           <button
             type="button"
-            className="text-blue-500 text-base underline"
+            className="text-[#6D8FBD] text-base underline"
             onClick={handleApiButtonClick}
           >
             View API Docs
@@ -45,14 +45,14 @@ function App() {
         </header>
         <main className="pt-12">
           {loading ? (
-            <p className="text-base text-gray-600 uppercase text-center font-semibold">
+            <p className="text-base text-[#676767] uppercase text-center font-semibold">
               Loading Your jokes
             </p>
           ) : null}
 
           {success ? (
-            <main className="flex flex-col px-8">
-              <div className="relative flex items-center">
+            <main className="flex flex-col px-8 overflow-x-hidden">
+              <div className="relative flex items-center animate-in slide-in-from-top-full fade-in-25">
                 <FaQuoteLeft className=" text-gray-200 text-7xl z-10 shrink-0" />
                 <p className="text-black text-xl z-20 relative -left-10">
                   {data?.setup}
@@ -61,14 +61,14 @@ function App() {
 
               <Button
                 intent="secondary"
-                className="my-16 self-center"
+                className="my-16 self-center animate-in slide-in-from-top-full fade-in-50"
                 onClick={toggleShowPunchLine}
               >
                 {!showPunchLine ? 'Show Punchline' : 'Hide Punchline'}
               </Button>
 
               {showPunchLine ? (
-                <div className="relative flex items-center ml-auto">
+                <div className="relative flex items-center ml-auto animate-in slide-in-from-right-full">
                   <p className="text-black text-xl z-20 relative -right-10 ">
                     {data?.punchline}
                   </p>
